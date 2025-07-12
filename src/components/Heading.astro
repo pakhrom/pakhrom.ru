@@ -1,0 +1,29 @@
+---
+import Banner from "./Banner.astro";
+
+interface Props {
+  title: string;
+  subtitle?: string;
+  isBanner?: boolean;
+}
+const { title, subtitle, isBanner = false } = Astro.props;
+---
+
+<hgroup class="mb-6">
+  {
+    () => {
+      if (isBanner) {
+        return (
+          <Banner isHeading>
+            <h1 class="leading-12">{title}</h1>
+          </Banner>
+        );
+      } else {
+        return (
+          <h1 class="text-shadow-[5px 5px lavender] leading-12">{title}</h1>
+        );
+      }
+    }
+  }
+  {subtitle && <p class="text-right font-[IBM-VGA] text-2xl">{subtitle}</p>}
+</hgroup>
