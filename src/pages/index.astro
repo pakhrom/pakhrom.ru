@@ -6,6 +6,18 @@ import Heading from "../components/Heading.astro";
 <MainLayout pageTitle="pakhrom's basement">
   <Heading title="Welcome to pakhrom's personal website!" isBanner />
 
+  <details class="mb-4 border-2 border-amber-400 bg-amber-50 p-2">
+    <summary
+      class="cursor-pointer list-none pl-6 [&::-webkit-details-marker]:hidden"
+    >
+      ⚠️ <b class="underline decoration-dotted">
+        This website is in active development!
+      </b>
+    </summary>
+    The whole website is currently being rewritten from scratch using the Astro framework.
+    Stay tuned for more updates!
+  </details>
+
   <h2>About me</h2>
   <p>
     Hi! I'm <b>Pakh</b>omov <b>Rom</b>an, a.k.a. <strong>pakhrom</strong>, – a
