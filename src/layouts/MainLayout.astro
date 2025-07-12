@@ -1,7 +1,10 @@
 ---
 import "../styles/global.css";
 
-const { title } = Astro.props;
+interface Props {
+  pageTitle: string;
+}
+const { pageTitle } = Astro.props;
 ---
 
 <!doctype html>
@@ -10,10 +13,10 @@ const { title } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <title>{pageTitle}</title>
   </head>
-  <body class="my-4 mx-auto max-w-prose">
-    <main class="mx-2">
+  <body class="mx-auto my-4 max-w-[80ch] bg-[#f3f3fd] font-mono">
+    <main class="mx-4">
       <slot />
     </main>
   </body>
