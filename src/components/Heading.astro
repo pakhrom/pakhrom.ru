@@ -20,7 +20,9 @@ const { title, subtitle, isBanner = false } = Astro.props;
         );
       } else {
         return (
-          <h1 class="text-shadow-[5px 5px lavender] leading-12">{title}</h1>
+          <h1 class="leading-12 text-shadow-[4px_4px_lavender] text-shadow-violet-200">
+            {title}
+          </h1>
         );
       }
     }
