@@ -6,7 +6,10 @@ const { class: className } = Astro.props;
 ---
 
 <div
-  class={`block bg-blue-700 py-2 text-center font-[IBM-VGA] text-white text-2xl my-4 ${className}`}
+  class:list={[
+    "my-4 block bg-blue-700 py-2 text-center font-[IBM-VGA] text-2xl text-white",
+    className,
+  ]}
 >
   <slot />
 </div>
