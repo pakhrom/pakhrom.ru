@@ -9,12 +9,12 @@ interface Props {
 const { title, subtitle, isBanner = false } = Astro.props;
 ---
 
-<hgroup class="mb-6">
+<hgroup class="mb-4">
   {
     () => {
       if (isBanner) {
         return (
-          <Banner isHeading>
+          <Banner class="px-4">
             <h1 class="leading-12">{title}</h1>
           </Banner>
         );
