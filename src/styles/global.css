@@ -21,10 +21,14 @@ h6 {
   font-family: "IBM-VGA", monospace;
   font-smooth: never;
   -webkit-font-smoothing: none;
+  filter: contrast(1);
+
+  margin-top: 0.5em;
 }
 
 h1 {
   font-size: var(--text-5xl);
+  margin-top: initial;
 }
 
 h2 {
@@ -46,4 +50,10 @@ h5 {
 a {
   color: var(--color-blue-700);
   text-decoration: underline;
+}
+
+a:hover {
+  color: white;
+  background-color: blue;
+  text-decoration: none;
 }
