@@ -1,6 +1,6 @@
 ---
-import Banner from "../components/Banner.astro";
 import "../styles/global.css";
+import Footer from "../components/Footer.astro";
 
 interface Props {
   pageTitle: string;
@@ -23,11 +23,7 @@ const { pageTitle } = Astro.props;
         <slot />
       </main>
 
-      <Banner class="mt-8 mb-1">Navigation</Banner>
-      <footer>
-        {Astro.url.pathname !== "/" && <a href="/">Home</a>}
-        {Astro.url.pathname !== "/credits/" && <a href="/credits/">Credits</a>}
-      </footer>
+      <Footer />
     </div>
   </body>
 </html>

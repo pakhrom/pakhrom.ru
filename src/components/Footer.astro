@@ -1,0 +1,27 @@
+---
+import Banner from "../components/Banner.astro";
+
+const links: string[][] = [
+  ["Home", "/"],
+  ["Credits", "/credits/"],
+];
+---
+
+<footer>
+  <Banner class="mt-8 mb-1">Navigation</Banner>
+  <ul class="flex flex-row gap-x-2 gap-y-1">
+    {
+      links.map((link: string[]) => {
+        if (Astro.url.pathname === link[1]) {
+          return <li>{link[0]}</li>;
+        } else {
+          return (
+            <li>
+              <a href={link[1]}>{link[0]}</a>
+            </li>
+          );
+        }
+      })
+    }
+  </ul>
+</footer>
