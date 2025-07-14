@@ -6,9 +6,10 @@ import svelte from '@astrojs/svelte';
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://pakhrom.neocities.org",
+  trailingSlash: "always",
   vite: {
     plugins: [tailwindcss()]
   },
-  integrations: [svelte()],
-  trailingSlash: "always"
+  integrations: [svelte()]
 });
