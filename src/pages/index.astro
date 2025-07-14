@@ -44,10 +44,14 @@ import Heading from "../components/Heading.astro";
     </a>
   </h3>
   <div class="flex flex-row">
+    <!-- Music Webring -->
     <div style="width:110px">
-      <!-- Music Webring -->
       <a href="//mr.jhorn.net/index.php">
-        <img src="//mr.jhorn.net/assets/button.gif" />
+        <img
+          src="//mr.jhorn.net/assets/button.gif"
+          alt="Music Webring"
+          class="mt-0.5 mb-1"
+        />
       </a>
       <a href="//mr.jhorn.net/prev.php?slug=pakhrom">prev</a>
       <a href="//mr.jhorn.net/rand.php">?</a>
@@ -55,46 +59,47 @@ import Heading from "../components/Heading.astro";
     </div>
 
     <!-- No AI Webring -->
-    <map name="noaimini2b">
-      <area
-        href="https://baccyflap.com/noai"
-        target="_blank"
-        shape="rect"
-        coords="10,6,166,28"
-        alt="no ai webring"
-        title="no ai webring"
+    <div class="max-h-16 overflow-auto">
+      <map name="noaimini2b">
+        <area
+          href="https://baccyflap.com/noai"
+          target="_blank"
+          shape="rect"
+          coords="10,6,166,28"
+          alt="no ai webring"
+          title="no ai webring"
+        />
+        <area
+          href="https://baccyflap.com/noai/?prv&s=pkr"
+          target="_top"
+          shape="rect"
+          coords="10,32,32,52"
+          alt="previous"
+          title="previous"
+        />
+        <area
+          href="https://baccyflap.com/noai/?rnd"
+          target="_top"
+          shape="rect"
+          coords="76,32,102,54"
+          alt="random"
+          title="random"
+        />
+        <area
+          href="https://baccyflap.com/noai/?nxt&s=pkr"
+          target="_top"
+          shape="rect"
+          coords="144,32,166,52"
+          alt="next"
+          title="next"
+        />
+      </map>
+      <img
+        style="width:176px;image-rendering:pixelated"
+        usemap="#noaimini2b"
+        src="https://baccyflap.com/noai/miniwidget2.gif"
+        alt="a white rounded rectangle in red outline, with the words 'no ai webring'. there's a no access emoji, a little robot emoji, two arrows pointing left and right, and two crossed arrows"
       />
-      <area
-        href="https://baccyflap.com/noai/?prv&s=pkr"
-        target="_top"
-        shape="rect"
-        coords="10,32,32,52"
-        alt="previous"
-        title="previous"
-      />
-      <area
-        href="https://baccyflap.com/noai/?rnd"
-        target="_top"
-        shape="rect"
-        coords="76,32,102,54"
-        alt="random"
-        title="random"
-      />
-      <area
-        href="https://baccyflap.com/noai/?nxt&s=pkr"
-        target="_top"
-        shape="rect"
-        coords="144,32,166,52"
-        alt="next"
-        title="next"
-      />
-    </map>
-    <img
-      style="width:176px;image-rendering:pixelated"
-      usemap="#noaimini2b"
-      src="https://baccyflap.com/noai/miniwidget2.gif"
-      alt="a white rounded rectangle in red outline, with the words 'no ai webring'. there's a no access emoji, a little robot emoji, two arrows pointing left and right, and two crossed arrows"
-    />
-    <div></div>
+    </div>
   </div>
 </MainLayout>
