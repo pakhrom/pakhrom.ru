@@ -12,7 +12,7 @@ const links: string[][] = [
 
 <footer>
   <Banner class="mt-8 mb-1">Navigation</Banner>
-  <ul class="flex flex-row gap-x-2 gap-y-1">
+  <ul class="flex flex-row flex-wrap gap-x-2 gap-y-1">
     {
       links.map((link: string[]) => {
         if (Astro.url.pathname === link[1]) {
