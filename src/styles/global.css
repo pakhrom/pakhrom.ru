@@ -74,4 +74,9 @@
     background-color: blue;
     text-decoration: none;
   }
+
+  svg {
+    display: inline-block;
+    margin-top: -0.125rem;
+  }
 }
