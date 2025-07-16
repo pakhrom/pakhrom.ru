@@ -4,12 +4,13 @@ import Footer from "../components/Footer.astro";
 
 interface Props {
   pageTitle: string;
+  pageLang?: string;
 }
-const { pageTitle } = Astro.props;
+const { pageTitle, pageLang = "en-US" } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={pageLang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
