@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import Heading from "../components/Heading.astro";
 import MainLayout from "../layouts/MainLayout.astro";
+import mikuDanceGif from "../images/mikudance.gif";
 ---
 
 <MainLayout pageTitle="Cool sites">
@@ -81,4 +82,11 @@ import MainLayout from "../layouts/MainLayout.astro";
 
   <h2>Links</h2>
   <p>Currently empty...</p>
+
+  <Image
+    src={mikuDanceGif}
+    alt="Miku Dancing"
+    class="absolute right-16 bottom-0"
+    priority
+  />
 </MainLayout>
