@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import Heading from "../components/Heading.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 ---
@@ -26,16 +27,11 @@ import MainLayout from "../layouts/MainLayout.astro";
       - Google for
       <a href="https://fonts.google.com/icons/">Material Symbols</a>
     </li>
+    <li class="mt-2">
+      * And of course, <a href="https://nekoweb.org">nekoweb.org</a> for hosting
+      this website. <br />
+    </li>
   </ul>
 
-  <div class="mt-4">
-    And of course, <br />
-    <a href="https://neocities.org">
-      <img
-        src="/images/neocities.png"
-        alt="Hosted by Neocities"
-        class="inline"
-      />
-    </a>
-  </div>
+  <div class="mt-4"></div>
 </MainLayout>
