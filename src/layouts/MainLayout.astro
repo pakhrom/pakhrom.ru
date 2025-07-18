@@ -1,6 +1,6 @@
 ---
 import "../styles/global.css";
-import Footer from "../components/Footer.astro";
+import Navigation from "../components/Navigation.astro";
 
 interface Props {
   pageTitle: string;
@@ -18,13 +18,22 @@ const { pageTitle, pageLang = "en-US" } = Astro.props;
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <title>{pageTitle}</title>
   </head>
-  <body class="mx-auto max-w-[80ch] bg-[#f3f3fd] font-[JetBrains_Mono]">
-    <div class="m-4">
-      <main>
+  <!--
+    I hate responsive width. This is a mess.
+    If there's a better way of achieving the same, please open a discussion.
+    I really want to know...
+   -->
+  <body
+    class="m-0 w-full bg-[#f3f3fd] font-[JetBrains_Mono] md:mx-auto md:w-fit"
+  >
+    <div
+      class="mx-4 flex-col gap-x-8 md:w-[76ch] lg:flex lg:w-fit lg:flex-row-reverse"
+    >
+      <main class="mb-8 w-full lg:w-[80ch]">
         <slot />
       </main>
 
-      <Footer />
+      <Navigation />
     </div>
   </body>
 </html>

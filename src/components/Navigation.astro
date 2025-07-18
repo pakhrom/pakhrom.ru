@@ -10,13 +10,18 @@ const links: string[][] = [
 ];
 ---
 
-<footer>
-  <Banner class="mt-8 mb-1">Navigation</Banner>
-  <ul class="flex flex-row flex-wrap gap-x-2 gap-y-1">
+<nav class="top-0 mb-8 h-fit lg:sticky lg:max-w-64">
+  <Banner class="mb-1">Navigation</Banner>
+  <ul class="flex flex-row flex-wrap gap-x-2 gap-y-1 lg:flex-col">
     {
       links.map((link: string[]) => {
         if (Astro.url.pathname === link[1]) {
-          return <li>{link[0]}</li>;
+          return (
+            <li>
+              <span class="hidden lg:inline">-&gt;</span>
+              {link[0]}{" "}
+            </li>
+          );
         } else {
           return (
             <li>
@@ -27,4 +32,4 @@ const links: string[][] = [
       })
     }
   </ul>
-</footer>
+</nav>
