@@ -22,7 +22,7 @@ jobs:
         with:
           nekoweb-api-key: ${{ secrets.NEKOWEB_API_KEY }}
           nekoweb-cookie: ${{ secrets.NEKOWEB_COOKIE }}
-          nekoweb-folder: '/'
+          nekoweb-folder: '/pakhrom.nekoweb.org/'
           directory: 'dist'
 
 
