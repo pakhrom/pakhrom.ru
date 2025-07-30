@@ -18,11 +18,12 @@ jobs:
         run: bun run build
 
       - name: Deploying
-        uses: indiefellas/deploy2nekoweb@v4
+        uses: indiefellas/deploy2nekoweb@main
         with:
           nekoweb-api-key: ${{ secrets.NEKOWEB_API_KEY }}
           nekoweb-cookie: ${{ secrets.NEKOWEB_COOKIE }}
-          nekoweb-folder: '/pakhrom.nekoweb.org/'
+          nekoweb-domain: 'pakhrom.nekoweb.org'
+          nekoweb-username: 'pakhrom'
           directory: 'dist'
 
 
