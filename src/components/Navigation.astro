@@ -1,36 +1,51 @@
 ---
 import Banner from "../components/Banner.astro";
 
-const links: string[][] = [
-  ["Home", "/"],
-  ["Cool sites", "/cool-sites/"],
-  ["Roadmap", "/roadmap/"],
-  ["Credits", "/credits/"],
-  ["Инфобез", "/resources/cybersec/"],
-  ["Блокировка интернета (WIP)", "/internet-blackout-rus/"],
-];
+const links: { [category: string]: string[][] } = {
+  "": [
+    ["Home", "/"],
+    ["Cool sites", "/cool-sites/"],
+    ["Roadmap", "/roadmap/"],
+    ["Credits", "/credits/"],
+  ],
+  "На русском": [["Инфобез", "/resources/cybersec/"]],
+};
 ---
 
 <nav class="top-0 mb-8 h-fit lg:sticky lg:max-w-54">
   <Banner class="mb-1">Navigation</Banner>
-  <ul class="flex flex-row flex-wrap gap-x-2 gap-y-1 lg:flex-col">
+  <ul class="flex flex-col gap-y-4">
     {
-      links.map((link: string[]) => {
-        if (Astro.url.pathname === link[1]) {
-          return (
-            <li>
-              <span class="hidden lg:inline">-&gt;</span>
-              {link[0]}{" "}
-            </li>
-          );
-        } else {
-          return (
-            <li>
-              <a href={link[1]}>{link[0]}</a>
-            </li>
-          );
-        }
-      })
+      Object.keys(links).map((category: string) => (
+        <li>
+          <div class="font-[IBM-VGA] text-xl">{category && category}</div>
+          <ul
+            class:list={[
+              "mt-1 flex flex-row flex-wrap gap-x-2 gap-y-1 lg:flex-col",
+              "ml-1 border-l-4 border-l-blue-700 pl-2",
+            ]}
+          >
+            {links[category].map((link: string[]) => {
+              if (Astro.url.pathname === link[1]) {
+                return (
+                  <li>
+                    <span class="hidden lg:inline">-&gt;</span>
+                    {link[0]}{" "}
+                  </li>
+                );
+              } else {
+                return (
+                  <li>
+                    <a href={link[1]} class="block">
+                      {link[0]}
+                    </a>
+                  </li>
+                );
+              }
+            })}
+          </ul>
+        </li>
+      ))
     }
   </ul>
 </nav>
