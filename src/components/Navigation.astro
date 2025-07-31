@@ -25,7 +25,7 @@ const links: { [category: string]: string[][] } = {
           <ul
             class:list={[
               "mt-1 flex flex-row flex-wrap gap-x-2 gap-y-1 lg:flex-col",
-              "ml-1 border-l-4 border-l-blue-700 pl-2",
+              category && "ml-1 border-l-4 border-l-blue-700 pl-2",
             ]}
           >
             {links[category].map((link: string[]) => {
