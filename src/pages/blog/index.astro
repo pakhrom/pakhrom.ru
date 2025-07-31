@@ -1,0 +1,25 @@
+---
+import { getCollection } from "astro:content";
+import Heading from "../../components/Heading.astro";
+import MainLayout from "../../layouts/MainLayout.astro";
+
+const blogRusPosts = (await getCollection("blogRus")).sort(
+  (a: any, b: any) =>
+    b.data.publicationDate.valueOf() - a.data.publicationDate.valueOf(),
+);
+---
+
+<MainLayout pageTitle="Блог - pakhrom's basement" pageLang="ru-RU">
+  <Heading title="Блог" />
+
+  <ol>
+    {
+      blogRusPosts.map((post: any) => (
+        <li>
+          {post.data.publicationDate.toLocaleDateString()}:
+          <a href={"/blog/" + post.id + "/"}>{post.data.title}</a>
+        </li>
+      ))
+    }
+  </ol>
+</MainLayout>
