@@ -1,0 +1,45 @@
+---
+import Heading from "../components/Heading.astro";
+import MainLayout from "./MainLayout.astro";
+import "../styles/blog-post.css";
+
+interface Props {
+  post: any;
+  postLang?: string;
+}
+const { post, postLang = "en-US" } = Astro.props;
+
+const postMetadata = [
+  ["Дата публикации", post.data.publicationDate.toLocaleString()],
+  [
+    "Дата последнего обновления",
+    post.data.lastUpdatedDate && post.data.lastUpdatedDate.toLocaleString(),
+  ],
+  ["Теги", post.data.tags && post.data.tags.join(", ")],
+];
+---
+
+<MainLayout pageTitle={post.data.pageTitle} pageLang={postLang}>
+  <Heading title={post.data.title} />
+
+  <slot />
+
+  <details class="mt-8 border-2 border-gray-500 bg-gray-50 lg:mb-32">
+    <summary class="text-xl">Метаданные поста</summary>
+    <div class="mt-2">
+      <ul class="mb-1 flex flex-col gap-y-1">
+        {
+          postMetadata.map((metadata: string[]) => {
+            if (metadata[1])
+              return (
+                <li class="ml-1 border-l-4 border-gray-500 pl-3">
+                  <b>{metadata[0]}:</b>
+                  {metadata[1]}
+                </li>
+              );
+          })
+        }
+      </ul>
+    </div>
+  </details>
+</MainLayout>
