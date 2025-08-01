@@ -18,8 +18,8 @@ const blogRusPosts = (await getCollection("blogRus")).sort(
         <li>
           {post.data.publicationDate.toLocaleDateString("ru-RU", {
             timeZone: "Europe/Moscow",
-          })}
-          :<a href={"/blog/" + post.id + "/"}>{post.data.title}</a>
+          }) + ":"}
+          <a href={"/blog/" + post.id + "/"}>{post.data.title}</a>
         </li>
       ))
     }
