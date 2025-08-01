@@ -4,9 +4,15 @@ import Banner from "./Banner.astro";
 interface Props {
   title: string;
   subtitle?: string;
+  subtitlePosition?: "left" | "center" | "right";
   isBanner?: boolean;
 }
-const { title, subtitle, isBanner = false } = Astro.props;
+const {
+  title,
+  subtitle,
+  subtitlePosition = "right",
+  isBanner = false,
+} = Astro.props;
 ---
 
 <hgroup class="mb-4">
@@ -27,5 +33,20 @@ const { title, subtitle, isBanner = false } = Astro.props;
       }
     }
   }
-  {subtitle && <p class="text-right font-[IBM-VGA] text-2xl">{subtitle}</p>}
+  {
+    subtitle && (
+      <p
+        class:list={[
+          "font-[IBM-VGA] text-2xl leading-tight",
+          subtitlePosition === "right"
+            ? "text-right"
+            : subtitlePosition === "center"
+              ? "text-center"
+              : null,
+        ]}
+      >
+        {subtitle}
+      </p>
+    )
+  }
 </hgroup>
