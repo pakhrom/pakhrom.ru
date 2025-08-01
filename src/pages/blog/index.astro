@@ -15,11 +15,20 @@ const blogRusPosts = (await getCollection("blogRus")).sort(
   <ol>
     {
       blogRusPosts.map((post: any) => (
-        <li>
-          {post.data.publicationDate.toLocaleDateString("ru-RU", {
-            timeZone: "Europe/Moscow",
-          }) + ":"}
-          <a href={"/blog/" + post.id + "/"}>{post.data.title}</a>
+        <li class="flex flex-col gap-y-1 lg:flex-row">
+          <div>
+            {post.data.publicationDate.toLocaleDateString("ru-RU", {
+              timeZone: "Europe/Moscow",
+            })}
+          </div>
+          <div class="border-l-4 border-blue-700 pl-2 lg:ml-2">
+            <a href={"/blog/" + post.id + "/"} class="text-xl">
+              {post.data.title}
+            </a>
+            <p class="mt-1 border-gray-500">
+              {post.data.description && post.data.description}
+            </p>
+          </div>
         </li>
       ))
     }
