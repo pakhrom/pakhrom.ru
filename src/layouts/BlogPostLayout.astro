@@ -10,10 +10,18 @@ interface Props {
 const { post, postLang = "en-US" } = Astro.props;
 
 const postMetadata = [
-  ["Дата публикации", post.data.publicationDate.toLocaleString()],
+  [
+    "Дата публикации",
+    post.data.publicationDate.toLocaleString("ru-RU", {
+      timeZone: "Europe/Moscow",
+    }) + " МСК",
+  ],
   [
     "Дата последнего обновления",
-    post.data.lastUpdatedDate && post.data.lastUpdatedDate.toLocaleString(),
+    post.data.lastUpdatedDate &&
+      post.data.lastUpdatedDate.toLocaleString("ru-RU", {
+        timeZone: "Europe/Moscow",
+      }) + " МСК",
   ],
   ["Теги", post.data.tags && post.data.tags.join(", ")],
 ];

@@ -16,8 +16,10 @@ const blogRusPosts = (await getCollection("blogRus")).sort(
     {
       blogRusPosts.map((post: any) => (
         <li>
-          {post.data.publicationDate.toLocaleDateString()}:
-          <a href={"/blog/" + post.id + "/"}>{post.data.title}</a>
+          {post.data.publicationDate.toLocaleDateString("ru-RU", {
+            timeZone: "Europe/Moscow",
+          })}
+          :<a href={"/blog/" + post.id + "/"}>{post.data.title}</a>
         </li>
       ))
     }
