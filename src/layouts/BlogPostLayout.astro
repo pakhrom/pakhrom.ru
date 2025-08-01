@@ -28,7 +28,11 @@ const postMetadata = [
 ---
 
 <MainLayout pageTitle={post.data.pageTitle} pageLang={postLang}>
-  <Heading title={post.data.title} />
+  <Heading
+    title={post.data.title}
+    subtitle={post.data.description}
+    subtitlePosition="left"
+  />
 
   <slot />
 
