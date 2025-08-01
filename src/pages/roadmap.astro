@@ -6,6 +6,17 @@ import Heading from "../components/Heading.astro";
 <MainLayout pageTitle="Development Roadmap">
   <Heading title="Roadmap" subtitle="Things I might add to this website" />
 
+  <h2>Features</h2>
+  <ul>
+    <li>
+      - <b>RSS feed</b> for various collections
+    </li>
+    <li>
+      - <b>Internationalization (i18n)</b>: provide pages both in English and in
+      Russian languages
+    </li>
+  </ul>
+
   <h2>Collections</h2>
   <ul>
     <li>
@@ -17,10 +28,10 @@ import Heading from "../components/Heading.astro";
     <li>- <b>Projects List</b></li>
   </ul>
 
-  <h2>Done</h2>
+  <h2 class="mt-12">Done</h2>
   <ul>
     <li>
-      - <b>Blog</b> -| added {new Date("2025-07-31").toLocaleDateString()}
+      - <b>Blog</b>: added {new Date("2025-07-31").toLocaleDateString()}
     </li>
   </ul>
 </MainLayout>
