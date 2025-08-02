@@ -1,4 +1,9 @@
 @layer utilities {
+  h2 {
+    line-height: 1;
+    margin-bottom: 0.2rem;
+  }
+
   p {
     margin-bottom: 1rem;
   }
