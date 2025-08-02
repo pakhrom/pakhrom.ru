@@ -6,19 +6,28 @@ import Heading from "../components/Heading.astro";
 <MainLayout pageTitle="Development Roadmap">
   <Heading title="Roadmap" subtitle="Things I might add to this website" />
 
+  <h2>Pages</h2>
+  <ul>
+    <li>- <b>About Me</b></li>
+    <li>- <b>Portfolio</b> with a projects list</li>
+  </ul>
+
   <h2>Features</h2>
   <ul>
     <li>
-      - <b>RSS feeds</b> for various collections
+      - <b>RSS feeds</b> for some collections
     </li>
     <li>
       - <b>Internationalization (i18n)</b>: provide pages both in English and in
-      Russian languages
+      Russian
     </li>
   </ul>
 
-  <h2>Collections</h2>
+  <h2 id="collections">Collections</h2>
   <ul>
+    <li>
+      - <b>Website Updates</b>
+    </li>
     <li>
       - <b>Microblog/Journal</b> - my life updates, rants and other nonsense for
       the interested ones
@@ -31,7 +40,9 @@ import Heading from "../components/Heading.astro";
   <h2 class="mt-12">Done</h2>
   <ul>
     <li>
-      - <b>Blog</b>: added {new Date("2025-07-31").toLocaleDateString()}
+      - <b>Blog</b> (Collection): added {
+        new Date("2025-07-31").toLocaleDateString()
+      }
     </li>
   </ul>
 </MainLayout>
