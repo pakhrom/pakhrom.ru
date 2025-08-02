@@ -39,7 +39,6 @@
 
   h1 {
     font-size: var(--text-5xl);
-    line-height: 0.9;
     padding-top: initial;
     margin-bottom: initial;
   }
