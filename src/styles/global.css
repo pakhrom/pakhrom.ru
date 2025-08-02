@@ -32,12 +32,14 @@
     -webkit-font-smoothing: none;
     filter: contrast(1);
 
-    margin-top: 0.5em;
+    line-height: 0.8;
+    padding-top: 0.5em;
   }
 
   h1 {
     font-size: var(--text-5xl);
-    margin-top: initial;
+    line-height: 0.9;
+    padding-top: initial;
   }
 
   h2 {

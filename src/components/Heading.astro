@@ -21,12 +21,12 @@ const {
       if (isBanner) {
         return (
           <Banner class="px-4">
-            <h1 class="leading-12">{title}</h1>
+            <h1>{title}</h1>
           </Banner>
         );
       } else {
         return (
-          <h1 class="mt-4 leading-12 text-shadow-[3px_3px_lavender] text-shadow-violet-200">
+          <h1 class="mt-4 text-shadow-[3px_3px_lavender] text-shadow-violet-200">
             {title}
           </h1>
         );
@@ -37,7 +37,7 @@ const {
     subtitle && (
       <p
         class:list={[
-          "font-[IBM-VGA] text-2xl leading-tight",
+          "mt-2 font-[IBM-VGA] text-2xl leading-[1]",
           subtitlePosition === "right"
             ? "text-right"
             : subtitlePosition === "center"
