@@ -6,7 +6,6 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
   site: "https://pakhrom.nekoweb.org",
-  trailingSlash: "always",
   vite: {
     plugins: [tailwindcss()]
   },
