@@ -33,13 +33,15 @@
     filter: contrast(1);
 
     line-height: 0.8;
-    padding-top: 0.5em;
+    padding-top: 1rem;
+    margin-bottom: 0.5rem;
   }
 
   h1 {
     font-size: var(--text-5xl);
     line-height: 0.9;
     padding-top: initial;
+    margin-bottom: initial;
   }
 
   h2 {
