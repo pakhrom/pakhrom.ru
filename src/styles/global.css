@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant hover (&:hover);
+
 @theme {
   --color-blue-700: blue;
 }

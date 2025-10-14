@@ -1,11 +1,12 @@
 ---
 import Heading from "../components/Heading.astro";
 import MainLayout from "../layouts/MainLayout.astro";
+import Timer from "../components/svelte/timer.svelte";
 ---
 
 <MainLayout pageTitle="Hall of Fame">
   <Heading title="Hall of Fame" subtitle="People I admire and why" />
-  <p class="mt-8 border-2 border-amber-400 bg-amber-50 p-2">
+  <p class="mt-8 mb-4 border-2 border-amber-400 bg-amber-50 p-2">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       height="24px"
@@ -16,6 +17,12 @@ import MainLayout from "../layouts/MainLayout.astro";
         d="M168-144q-50 0-85-35t-35-85q0-29 12.5-54T96-360v-168h96v-192h288l176 381q8 14 12 29.95 4 15.96 4 33.05 0 54.69-38.66 93.34Q594.69-144 540-144q-37.65 0-69.32-19.5Q439-183 421.57-216H278q-14 33-43.76 52.5Q204.48-144 168-144Zm552-48v-576h72v504h120v72H720Zm-552-24q20.4 0 34.2-13.8Q216-243.6 216-264q0-20.4-13.8-34.2Q188.4-312 168-312q-20.4 0-34.2 13.8Q120-284.4 120-264q0 20.4 13.8 34.2Q147.6-216 168-216Zm372 0q25 0 42.5-17.5T600-276q0-25-17.5-42.5T540-336q-25 0-42.5 17.5T480-276q0 25 17.5 42.5T540-216Zm-254-72h123.08q1.92-13 4.42-25t8.5-23h-86L211-456h-43v72q43 0 76.5 27t41.5 69Zm79-120h180L434-648H264v143l101 97Zm-29 72-19.5-19q-19.5-19-43-41.5t-43-41L211-456h-43 43l125 120h86-86Z"
       ></path></svg
     >
-    Under construction, please wait...【=◈︿◈=】
+    Under construction, please wait
+    <Timer endTime={1760806800} client:load />
   </p>
+  <div class="my-32 text-center text-4xl lg:my-16">
+    <span class="rounded-sm hover:bg-[#F57EB6] hover:text-white"
+      >【=◈︿◈=】</span
+    >
+  </div>
 </MainLayout>
