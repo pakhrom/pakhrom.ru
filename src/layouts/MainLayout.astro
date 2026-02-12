@@ -6,7 +6,7 @@ interface Props {
   pageTitle: string;
   pageLang?: string;
 }
-const { pageTitle, pageLang = "en-US" } = Astro.props;
+const { pageTitle, pageLang = "en-US" }: Props = Astro.props;
 ---
 
 <!doctype html>
@@ -25,7 +25,7 @@ const { pageTitle, pageLang = "en-US" } = Astro.props;
     I really want to know...
    -->
   <body
-    class="m-0 w-full bg-[#f3f3fd] font-[JetBrains_Mono] md:mx-auto md:w-fit"
+    class="m-0 mt-4 w-full bg-[#f3f3fd] font-[JetBrains_Mono] md:mx-auto md:w-fit"
   >
     <div
       class="mx-4 flex-col gap-x-8 md:w-[76ch] lg:flex lg:w-fit lg:flex-row-reverse"
