@@ -4,7 +4,7 @@
   let {
     endTime,
     dayOnly = false,
-    labels,
+    labels: providedLabels,
     delimiter = " ",
     timeoutMessage,
     lang = "en-US",
@@ -31,7 +31,8 @@
       s: "с",
     },
   };
-  if (!labels) labels = LABELS_BY_LANG[lang];
+
+  let labels = $derived(providedLabels ?? LABELS_BY_LANG[lang]);
 
   const MILLISECONDS_PER_SECOND: number = 1000;
   const MILLISECONDS_PER_MINUTE: number = MILLISECONDS_PER_SECOND * 60;
